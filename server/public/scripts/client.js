@@ -45,7 +45,7 @@ myApp.controller('ListingsController', function ($http){
         }).then(function(response){
             let data = response.data;
             console.log('ListingsController - getListings -response ', response.data);
-            //lc.listings = data.results;
+            vm.listings = data.results;
         }).catch(function(error){
             console.log('ListingsController - getListings - error', error);
         });
@@ -62,10 +62,10 @@ myApp.controller('RentalsController', function ($http){
             url: '/listings/forrent'
         }).then(function(response){
             let data = response.data;
-            console.log('ListingsController - getR -response ', response.data);
-            //lc.rentals = data.results;
+            console.log('ListingsController - getRentals -response ', response.data);
+            vm.rentals = data.results;
         }).catch(function(error){
-            console.log('ListingsController - getListings - error', error);
+            console.log('ListingsController - getRentals - error', error);
         });
     };// end getListings
 });// end RentalsController
