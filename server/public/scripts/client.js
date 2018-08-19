@@ -38,14 +38,16 @@ myApp.controller('ListingsController', function ($http){
     const vm = this;
     vm.listings = [];
     console.log('NG in listings');
-    vm.getListings = function(){
+    getListings();
+
+    function getListings(){
         $http({
             method: 'GET',
             url: '/listings/forsale'
         }).then(function(response){
-            let data = response.data;
             console.log('ListingsController - getListings -response ', response.data);
-            vm.listings = data.results;
+            vm.listings = response.data;
+            console.log(vm.listings);
         }).catch(function(error){
             console.log('ListingsController - getListings - error', error);
         });
@@ -56,16 +58,30 @@ myApp.controller('RentalsController', function ($http){
     const vm = this;
     vm.rentals = [];
     console.log('NG in rentals');
-    vm.getRentals = function(){
+    getRentals();
+    
+    function getRentals(){
         $http({
             method: 'GET',
             url: '/listings/forrent'
         }).then(function(response){
-            let data = response.data;
             console.log('ListingsController - getRentals -response ', response.data);
-            vm.rentals = data.results;
+            vm.rentals = response.data;
         }).catch(function(error){
             console.log('ListingsController - getRentals - error', error);
         });
     };// end getListings
+
+    vm.deleteRental = function(rentalId){
+        $http({
+            method: 'Delete',
+            url: '/listings/forrent/' + rentalId
+        }).then(function(response){
+            console.log('in deleteRental');
+            getRentals();
+        }).catch(function(error){
+            alert('unable to detete');
+        });
+    }// end deleteRental
+    
 });// end RentalsController

@@ -1,3 +1,10 @@
 <h1>Rentals</h1>
 
-<button ng-click="rc.getRentals()" >get rentals</button>
+<div class="card" ng-repeat="rental in rc.rentals">
+    <img src="images/{{rental.image_path}}" style="width:20%">
+    <div class="card-info">
+        <h4><b>{{rental.cost}}</b></h4>
+        <p>{{rental.sqft}}</p>
+        <button ng-click="rc.deleteRental(rental.id)">Delete</button>
+    </div>
+</div>

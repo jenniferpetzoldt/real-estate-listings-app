@@ -1,2 +1,9 @@
 <h1>Listings</h1>
-<button ng-click="lc.getListings()" >get listings</button>
+<div class="card" ng-repeat="listing in lc.listings">
+    <img src="images/{{listing.image_path}}" style="width:20%">
+    <div class="card-info">
+        <h4><b>{{listing.cost}}</b></h4>
+        <p>{{listing.sqft}}</p>
+        <button >Delete</button>
+    </div>
+</div>
