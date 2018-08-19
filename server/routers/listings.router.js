@@ -22,6 +22,7 @@ pool.on('error', (error)=>{
     console.log('Error connecting to db', error);
 });
 
+// POST route
 router.post('/', function(req, res){
     const listingToAdd = req.body;
     console.log('In POST route: ', listingToAdd);
@@ -33,5 +34,20 @@ router.post('/', function(req, res){
         res.sendStatus(500);
     });
 });
+
+//GET route
+router.get('/', function(req, res){
+    console.log('in GET route');
+    const query = 'SELECT * FROM "listings" WHERE "type" = ($1);';
+    pool.query(query, ['sale']).then(()=>{
+        console.log(results);
+        res.send(results.rows);
+    }).catch((error)=>{
+        console.log('Error in GET', error);
+        res.sendStatus(500);
+    });
+});
+
+//DELETE route
 
 module.exports = router;

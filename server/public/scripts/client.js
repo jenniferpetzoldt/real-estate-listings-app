@@ -36,7 +36,20 @@ myApp.controller('HomeController', function ($http){
 
 myApp.controller('ListingsController', function ($http){
     const vm = this;
+    vm.listings = [];
     console.log('NG in listings');
+    vm.getListings = function(){
+        $http({
+            method: 'GET',
+            url: '/listings'
+        }).then(function(response){
+            let data = response.data;
+            console.log('ListingsController - getListings -response ', response.data);
+            //lc.listings = data.results;
+        }).catch(function(error){
+            console.log('ListingsController - getListings - error', error);
+        });
+    };// end getListings
 });// end ListingsController
 
 myApp.controller('RentalsController', function ($http){
