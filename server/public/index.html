@@ -11,7 +11,15 @@
 </head>
 <body ng-app="myApp">
     <div class="container">
+        <header>
         <h1>Real Estate Listing App</h1>
+    </header>
+    <nav>
+        <li><a href="/">Home</a></li>
+        <li><a href="#!/rentals">Rentals</a></li>
+        <li><a href="#!/listings">Listings</a></li>
+    </nav>
+    <ng-view></ng-view>
     </div>   
 </body>
 </html>

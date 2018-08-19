@@ -26,3 +26,12 @@ VALUES (123000, 1500, 'sale', 'Forest Lake', 'shiny.jpg'),
 (1100, 1200, 'rent', 'Savage', 'rental.jpg'),
 (950, 1200, 'rent', 'Robbinsdale', 'rental2.jpg'),
 (700, 650, 'rent', 'Marshall', 'classic-flats.jpg');
+
+CREATE TABLE "listings" (
+        "id" serial primary key,
+        "cost" integer,
+        "sqft" integer,
+        "type" varchar (10) not null,
+        "city" varchar (20) not null,
+        "image_path" varchar (50) not null 
+        );
