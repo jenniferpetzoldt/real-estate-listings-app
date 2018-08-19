@@ -36,7 +36,7 @@ router.post('/', function(req, res){
 });
 
 // Listings GET route
-router.get('/forsale', function(req, res){
+router.get('/for-sale', function(req, res){
     console.log('in GET route');
     const query = 'SELECT * FROM "listings" WHERE "type" = ($1);';
     pool.query(query, ['sale']).then((results)=>{
@@ -49,6 +49,18 @@ router.get('/forsale', function(req, res){
 });
 
 //listings DELETE route
+router.delete('/for-sale/:id', function(req, res){
+    console.log('In listing DELETE route');
+    const id = req.params.id;
+    const query = 'DELETE FROM "listings" WHERE "id" = ($1);';
+    pool.query(query, [id]). then((results)=>{
+        console.log(results);
+        res.sendStatus(200);
+    }).catch((error)=>{
+        console.log('Error with listing DELETE', error);
+        res.sendStatus(500);
+    });
+});
 
 //Rentals GET route
 router.get('/for-rent', function(req, res){
@@ -65,14 +77,14 @@ router.get('/for-rent', function(req, res){
 
 // rentals DELETE route
 router.delete('/for-rent/:id', function(req,res){
-    console.log('In rentals DELETE route');
+    console.log('In rental DELETE route');
     const id = req.params.id;
     const query = 'DELETE FROM "listings" WHERE "id" = ($1);';
     pool.query(query, [id]).then((results)=>{
         console.log(results);
         res.sendStatus(200);
     }).catch((error)=>{
-        console.log('Error with rentals DELETE', error);
+        console.log('Error with rental DELETE', error);
         res.sendStatus(500);
     });
 });
