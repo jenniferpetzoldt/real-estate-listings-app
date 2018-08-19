@@ -43,7 +43,7 @@ myApp.controller('ListingsController', function ($http){
     function getListings(){
         $http({
             method: 'GET',
-            url: '/listings/forsale'
+            url: '/listings/for-sale'
         }).then(function(response){
             console.log('ListingsController - getListings -response ', response.data);
             vm.listings = response.data;
@@ -63,7 +63,7 @@ myApp.controller('RentalsController', function ($http){
     function getRentals(){
         $http({
             method: 'GET',
-            url: '/listings/forrent'
+            url: '/listings/for-rent'
         }).then(function(response){
             console.log('ListingsController - getRentals -response ', response.data);
             vm.rentals = response.data;
@@ -75,7 +75,7 @@ myApp.controller('RentalsController', function ($http){
     vm.deleteRental = function(rentalId){
         $http({
             method: 'Delete',
-            url: '/listings/forrent/' + rentalId
+            url: '/listings/for-rent/' + rentalId
         }).then(function(response){
             console.log('in deleteRental');
             getRentals();
@@ -83,5 +83,5 @@ myApp.controller('RentalsController', function ($http){
             alert('unable to detete');
         });
     }// end deleteRental
-    
+
 });// end RentalsController

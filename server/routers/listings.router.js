@@ -48,8 +48,10 @@ router.get('/forsale', function(req, res){
     });
 });
 
+//listings DELETE route
+
 //Rentals GET route
-router.get('/forrent', function(req, res){
+router.get('/for-rent', function(req, res){
     console.log('in GET route');
     const query = 'SELECT * FROM "listings" WHERE "type" = ($1);';
     pool.query(query, ['rent']).then((results)=>{
@@ -61,6 +63,18 @@ router.get('/forrent', function(req, res){
     });
 });
 
-//DELETE route
+// rentals DELETE route
+router.delete('/for-rent/:id', function(req,res){
+    console.log('In rentals DELETE route');
+    const id = req.params.id;
+    const query = 'DELETE FROM "listings" WHERE "id" = ($1);';
+    pool.query(query, [id]).then((results)=>{
+        console.log(results);
+        res.sendStatus(200);
+    }).catch((error)=>{
+        console.log('Error with rentals DELETE', error);
+        res.sendStatus(500);
+    });
+});
 
 module.exports = router;
