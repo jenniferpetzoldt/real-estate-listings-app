@@ -52,6 +52,19 @@ myApp.controller('ListingsController', function ($http){
             console.log('ListingsController - getListings - error', error);
         });
     };// end getListings
+
+    vm.deleteListing = function(listingId){
+        $http({
+            method: 'DELETE',
+            url: '/listings/for-sale/' + listingId
+        }).then(function(response){
+            console.log('in deleteListing');
+            getListings();
+        }).catch(function(error){
+            alert('unable to delete listing');
+        });
+    }// end deleteListing
+    
 });// end ListingsController
 
 myApp.controller('RentalsController', function ($http){
@@ -74,13 +87,13 @@ myApp.controller('RentalsController', function ($http){
 
     vm.deleteRental = function(rentalId){
         $http({
-            method: 'Delete',
+            method: 'DELETE',
             url: '/listings/for-rent/' + rentalId
         }).then(function(response){
             console.log('in deleteRental');
             getRentals();
         }).catch(function(error){
-            alert('unable to detete');
+            alert('unable to detete rental');
         });
     }// end deleteRental
 
