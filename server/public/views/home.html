@@ -1,11 +1,11 @@
 <div >
 <h1>Add Listing</h1>
-<form></form>
-Property Type: <input type="text">
-Cost: <input type="number">
-Size: <input type="number">
-Location: <input type="text">
-Upload Picture: <input type="text">
+<form ng-submit="hc.addListing(hc.listingToAdd)">
+Cost: <input type="number" ng-model="hc.listingToAdd.cost" placeholder="e.g. 500000">
+Size: <input type="number" ng-model="hc.listingToAdd.sqft" placeholder="e.g. 800">
+Property Type: <input type="text" ng-model="hc.listingToAdd.type" placeholder="rent or sale">
+Location: <input type="text" ng-model="hc.listingToAdd.city" placeholder="e.g. Minneapolis">
+Upload Picture: <input type="text" ng-model="hc.listingToAdd.image_path" placeholder="e.g. stony.jpg">
 <input type="submit" value="submit">
 </form>
 </div>

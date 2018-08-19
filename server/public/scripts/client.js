@@ -19,9 +19,7 @@ myApp.config(function ($routeProvider) {
 myApp.controller('HomeController', function ($http){
     const vm = this;
     console.log('NG in home');
-
-    vm.addListing = function(name) {
-        let listingToAdd = {type: type, cost: cost, location: city, size: sqft, picture: image_path};
+    vm.addListing = function(listingToAdd) {
         console.log('adding listing to server', listingToAdd);
         $http({
             method: 'POST',
