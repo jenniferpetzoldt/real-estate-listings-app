@@ -35,11 +35,24 @@ router.post('/', function(req, res){
     });
 });
 
-//GET route
-router.get('/', function(req, res){
+// Listings GET route
+router.get('/forsale', function(req, res){
     console.log('in GET route');
     const query = 'SELECT * FROM "listings" WHERE "type" = ($1);';
-    pool.query(query, ['sale']).then(()=>{
+    pool.query(query, ['sale']).then((results)=>{
+        console.log(results);
+        res.send(results.rows);
+    }).catch((error)=>{
+        console.log('Error in GET', error);
+        res.sendStatus(500);
+    });
+});
+
+//Rentals GET route
+router.get('/forrent', function(req, res){
+    console.log('in GET route');
+    const query = 'SELECT * FROM "listings" WHERE "type" = ($1);';
+    pool.query(query, ['rent']).then((results)=>{
         console.log(results);
         res.send(results.rows);
     }).catch((error)=>{
