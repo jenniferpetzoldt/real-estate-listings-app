@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 // Setup routes
-
+app.use('/listings', listingsRouter);
 
 // Static files
 app.use(express.static('server/public'));
