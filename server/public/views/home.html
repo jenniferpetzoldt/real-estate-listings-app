@@ -3,9 +3,9 @@
     <form ng-submit="hc.addListing(hc.listingToAdd)">
         <p class="inputs">Cost: <input type="number" ng-model="hc.listingToAdd.cost" placeholder="e.g. 500000"></p>
         <p class="inputs">Size: <input type="number" ng-model="hc.listingToAdd.sqft" placeholder="e.g. 800"></p>
-        <p class="inputs">Type: <input type="text" ng-model="hc.listingToAdd.type" placeholder="rent or sale"></p>
+        <p class="inputs">Type: <select ng-model="hc.listingToAdd.type" ng-options="x for x in hc.types"></select></p>
         <p class="inputs">City: <input type="text" ng-model="hc.listingToAdd.city" placeholder="e.g. Minneapolis"></p>
-        <p class="inputs">Image: <input type="text" ng-model="hc.listingToAdd.image_path" placeholder="e.g. stony.jpg"></p>
+        <p class="inputs">Image: <select ng-model="hc.listingToAdd.image_path" ng-options="x for x in hc.images"></select></p>
         <input type="submit" value="Submit">
     </form>
 </div>
