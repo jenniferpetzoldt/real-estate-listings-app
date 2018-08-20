@@ -1,4 +1,5 @@
 # Real Estate Listing App
+This App was created to house property listing for rent and for sale. Users are able to post listings to the website as well as remove properties that have been sold. 
 
 ##Built With
 * AngularJS
