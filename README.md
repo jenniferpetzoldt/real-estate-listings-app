@@ -1,7 +1,7 @@
 # Real Estate Listing App
 This App was created to house property listing for rent and for sale. Users are able to post listings to the website as well as remove properties that have been sold. 
 
-##Built With
+## Built With
 * AngularJS
 * Node.js
 * Express
@@ -12,7 +12,7 @@ This App was created to house property listing for rent and for sale. Users are 
 ## Getting Started
 These instructions will create a copy of the project for you to utilize on your local machine for development and testing purposes. 
 
-###Installing
+### Installing
 Steps to get the develoment environment running.
 
 1. Download this project.
@@ -20,7 +20,7 @@ Steps to get the develoment environment running.
 3. ```npm start```
 4. Open within your code editing tool.
 
-###Completed Features
+### Completed Features
 - [ ] Listings are persistant on server
 - [ ] Users can add new listings
 - [ ] Separate veiws for two types of listings
@@ -29,7 +29,7 @@ Steps to get the develoment environment running.
 - [ ] Listings are deletable from page and database
 - [ ] Dropdown lists within form 
 
-###Next Steps
+### Next Steps
 Features to be added:
 - [ ] Sorting listings by price
 - [ ] Allowing users to upload images
@@ -37,5 +37,5 @@ Features to be added:
     - [ ] Administrative
     - [ ] User
 
-##Authors
+## Authors
 Jennifer Petzoldt
