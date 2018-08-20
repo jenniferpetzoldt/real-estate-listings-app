@@ -1,5 +1,75 @@
+*{
+    box-sizing: border-box;
+}
+
+button{
+    margin-bottom: 8px;
+}
+
+button:hover {
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+}
+
+form, input {
+    display: inline-block;
+}
+
+h4, p {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+header {
+    font-size: 180%;
+    border-bottom: 1px solid #1E2629;
+}
+
+html, body {
+    background-color: #8DB5C2;
+    text-align: center;
+    color: #1E2629;
+    font-family: 'Montserrat', sans-serif;
+}
+
+img {
+    height: 190px;
+    width: 117px;
+}
+
+li a {
+    display: block;
+    color: #1E2629;
+    font-size: 200%;
+    padding: 8px 16px;
+    text-decoration: none;
+ }
+ 
+ li {
+    display: inline-block;
+ }
+
+ li a:hover {
+    background-color: #556D75;
+    color: #8DB5C2;
+ }
+
+ nav {
+    border-bottom: 1px solid #1E2629;
+ }
+
 .card {
-    background-color: pink;
-    height: 20%;
-    margin: 2%;
+    background-color:rgb(215, 217, 221);
+    margin: 3.5%;
+    width: 25%;
+    float: left;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.inputs{
+    margin: 8px;
+    text-align: left;
 }

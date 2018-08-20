@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
     <script src="vendors/angular.min.js"></script>
     <script src="vendors/angular-route.js"></script>
     <script src="scripts/client.js"></script>
+    <script src="scripts/controllers/home.controller.js"></script>
+    <script src="scripts/controllers/listings.controller.js"></script>
+    <script src="scripts/controllers/rentals.controller.js"></script>
     <title>Real Estate Listing App</title>
 </head>
+
 <body ng-app="myApp">
     <div class="container">
         <header>
-        <h1>Real Estate Listing App</h1>
-    </header>
-    <nav>
-        <li><a href="/">Home</a></li>
-        <li><a href="#!/rentals">Rentals</a></li>
-        <li><a href="#!/listings">Listings</a></li>
-    </nav>
-    <ng-view></ng-view>
-    </div>   
+            <h1>Real Estate Listing App</h1>
+        </header>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="#!/rentals">Rentals</a></li>
+                <li><a href="#!/listings">Listings</a></li>
+            </ul>
+        </nav>
+        <ng-view></ng-view>
+    </div>
 </body>
+
 </html>

@@ -1,9 +1,11 @@
-<h1>Listings</h1>
+<h1>Properties For Sale</h1>
 <div class="card" ng-repeat="listing in lc.listings">
-    <img src="images/{{listing.image_path}}" style="width:20%">
+    <img ng-src="images/{{listing.image_path}}" style="width:100%">
     <div class="card-info">
-        <h4><b>{{listing.cost}}</b></h4>
-        <p>{{listing.sqft}}</p>
+        <h4><b>{{listing.cost | currency}}</b></h4>
+        <p>{{listing.sqft | number : fractionSize}} sq ft</p>
+        <!-- added ', MN' just because these all are from MN. Would store state data if making a real app -->
+        <p>{{listing.city}}, MN</p> 
         <button ng-click="lc.deleteListing(listing.id)">Delete</button>
     </div>
 </div>

@@ -1,11 +1,11 @@
-<div >
-<h1>Add Listing</h1>
-<form ng-submit="hc.addListing(hc.listingToAdd)">
-Cost: <input type="number" ng-model="hc.listingToAdd.cost" placeholder="e.g. 500000">
-Size: <input type="number" ng-model="hc.listingToAdd.sqft" placeholder="e.g. 800">
-Property Type: <input type="text" ng-model="hc.listingToAdd.type" placeholder="rent or sale">
-Location: <input type="text" ng-model="hc.listingToAdd.city" placeholder="e.g. Minneapolis">
-Upload Picture: <input type="text" ng-model="hc.listingToAdd.image_path" placeholder="e.g. stony.jpg">
-<input type="submit" value="submit">
-</form>
+<div>
+    <h1>Add Listing</h1>
+    <form ng-submit="hc.addListing(hc.listingToAdd)">
+        <p class="inputs">Cost: <input type="number" ng-model="hc.listingToAdd.cost" placeholder="e.g. 500000"></p>
+        <p class="inputs">Size: <input type="number" ng-model="hc.listingToAdd.sqft" placeholder="e.g. 800"></p>
+        <p class="inputs">Type: <input type="text" ng-model="hc.listingToAdd.type" placeholder="rent or sale"></p>
+        <p class="inputs">City: <input type="text" ng-model="hc.listingToAdd.city" placeholder="e.g. Minneapolis"></p>
+        <p class="inputs">Image: <input type="text" ng-model="hc.listingToAdd.image_path" placeholder="e.g. stony.jpg"></p>
+        <input type="submit" value="Submit">
+    </form>
 </div>

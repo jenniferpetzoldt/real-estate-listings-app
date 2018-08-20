@@ -1,10 +1,12 @@
-<h1>Rentals</h1>
+<h1>Units For Rent</h1>
 
 <div class="card" ng-repeat="rental in rc.rentals">
-    <img src="images/{{rental.image_path}}" style="width:20%">
+    <img ng-src="images/{{rental.image_path}}" style="width:100%">
     <div class="card-info">
-        <h4><b>{{rental.cost}}</b></h4>
-        <p>{{rental.sqft}}</p>
+        <h4><b>{{rental.cost | currency}}</b></h4>
+        <p>{{rental.sqft | number : fractionSize}} sq ft</p>
+       <!-- added ', MN' just because these all are from MN. Would store state data if making a real app -->
+       <p>{{rental.city}}, MN</p> 
         <button ng-click="rc.deleteRental(rental.id)">Delete</button>
     </div>
 </div>
